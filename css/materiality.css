@@ -1,12 +1,12 @@
 /* vertical align */
 .valign-wrapper {
-	height: 100%;
 	-webkit-align-items: center;
 	-ms-flex-align: center;
 	align-items: center;
 	display: -webkit-flex;
 	display: -ms-flexbox;
 	display: flex;
+	height: 100%;
 }
 .valign-wrapper .valign {
 	display: block;
@@ -163,8 +163,14 @@
 .panel-fullscreen.open {
 	display: block;
 }
+.panel-fullscreen .panel-heading {
+	background-color: initial;
+	border-bottom: 1px solid #ddd;
+	height: 44px;
+	max-height: 44px;
+	width: 100%;
+}
 .panel-fullscreen .panel-body {
-	height: calc(100% - 56px);
 	max-height: 100%;
 	overflow-y: auto;
 	position: absolute;
@@ -182,9 +188,6 @@
 
 /* snackbar */
 .snackbar {
-	-webkit-align-items: center;
-	-ms-flex-align: center;
-	align-items: center;
 	background-color: #323232;
 	border-radius: 2px;
 	box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
@@ -196,13 +199,9 @@
 	display: flex;
 	float: none;
 	font-size: 14px;
-	-webkit-justify-content: flex-start;
-	-ms-flex-pack: start;
-	justify-content: flex-start;
 	margin: 8px;
 	max-height: 168px;
 	max-width: 100%;
-	min-height: 48px;
 	opacity: 1;
 	overflow: hidden;
 	position: fixed;
@@ -245,6 +244,18 @@
 	-webkit-transform: translate(0, 0);
 	transform: translate(0, 0);
 	transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+.snackbar * {
+	-webkit-align-items: center;
+	-ms-flex-align: center;
+	align-items: center;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-justify-content: flex-start;
+	-ms-flex-pack: start;
+	justify-content: flex-start;
+	min-height: 48px;
 }
 .snackbar .text {
 	padding: 0 6px;

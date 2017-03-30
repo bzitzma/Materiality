@@ -1,12 +1,13 @@
 /* fixed action btn */
 $(document).on("click", ".fixed-action-btn.click-to-toggle > a", function() {
 	var btn = $(this);
-	var menu = $(this).parent(); console.log(menu.hasClass("active"));
+	var menu = $(this).parent();
 	var item = menu.find("ul a, ul button");
 	if (menu.hasClass("active")) {
 		item.css({ "transition-delay": "0ms" });
 		btn.children().show();
 		menu.removeClass("active");
+		btn.find("cancel").remove();
     } else {
 		var time = 0;
 		item.each(function() {
@@ -14,7 +15,7 @@ $(document).on("click", ".fixed-action-btn.click-to-toggle > a", function() {
 				time += 40;
 		});
 		btn.children().hide();
-		btn.append("<i class='material-icons'>close</i>");
+		btn.append("<i class='material-icons cancel'>&#xE5CD;</i>");
 		menu.addClass("active");
 	}
 });
@@ -29,7 +30,11 @@ $(document).on("click", function(e) {
 $.fn.extend({
 	openPanel: function() {
 		var panel = $(this);
-		$("<div class='panel-backdrop'></div>").appendTo("body").fadeIn(function() { panel.fadeIn(); });
+		$("<div class='panel-backdrop'></div>").appendTo("body").fadeIn(function() {
+			var height = "calc(100% - "+((panel.find(".panel-heading").outerHeight() || 0) + (panel.find(".panel-footer").outerHeight() || 0))+"px)";
+			panel.find(".panel-body").css("height", height);
+			panel.fadeIn();
+		});
 	},
 	closePanel: function(options) {
 		var panel = $(this);
