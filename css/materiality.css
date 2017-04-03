@@ -167,7 +167,7 @@ body.panel-open {
 	background-color: initial;
 	border-bottom: 1px solid #ddd;
 	min-height: 20px;
-	overflow: auto;
+	overflow: hidden;
 	width: 100%;
 }
 .panel-fullscreen .panel-body {
@@ -181,6 +181,7 @@ body.panel-open {
 	bottom: 0px;
 	height: 56px;
 	max-height: 56px;
+	overflow: hidden;
 	padding: 5px 15px;
 	position: absolute;
 	width: 100%;
