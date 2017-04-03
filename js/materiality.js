@@ -33,7 +33,9 @@ $.fn.extend({
 		$("<div class='panel-backdrop'></div>").appendTo("body").fadeIn(function() {
 			var height = "calc(100% - "+((panel.find(".panel-heading").outerHeight() || 0) + (panel.find(".panel-footer").outerHeight() || 0))+"px)";
 			panel.find(".panel-body").css("height", height);
-			panel.fadeIn();
+			panel.fadeIn(function() {
+				$("body").addClass("panel-open");
+			});
 		});
 	},
 	closePanel: function(options) {
@@ -42,6 +44,7 @@ $.fn.extend({
 		panel.fadeOut(function() {
 			options.callback.call(this);
 			$(".panel-backdrop").fadeOut(function() { $(this).remove(); });
+			$("body").removeClass("panel-open");
 		});
 	}
 });

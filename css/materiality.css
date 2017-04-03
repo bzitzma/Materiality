@@ -160,8 +160,8 @@
 	width: 100%;
 	z-index: 9999;
 }
-.panel-fullscreen.open {
-	display: block;
+body.panel-open {
+    overflow: hidden;
 }
 .panel-fullscreen .panel-heading {
 	background-color: initial;
