@@ -168,11 +168,13 @@ body.panel-open {
 	border-bottom: 1px solid #ddd;
 	min-height: 20px;
 	overflow: hidden;
+	padding: 10px 15px;
 	width: 100%;
 }
 .panel-fullscreen .panel-body {
 	max-height: 100%;
 	overflow-y: auto;
+	padding: 15px;
 	position: absolute;
 	width: 100%;
 }
@@ -182,7 +184,7 @@ body.panel-open {
 	height: 56px;
 	max-height: 56px;
 	overflow: hidden;
-	padding: 5px 15px;
+	padding: 10px 15px;
 	position: absolute;
 	width: 100%;
 }
