@@ -168,15 +168,12 @@ body.panel-open {
 	border-bottom: 1px solid #ddd;
 	min-height: 20px;
 	overflow: hidden;
-	padding: 10px 0;
-	width: 100%;
+	padding: 10px 15px;
 }
 .panel-fullscreen .panel-body {
 	max-height: 100%;
 	overflow-y: auto;
-	padding: 15px 0;
-	position: absolute;
-	width: 100%;
+	padding: 15px;
 }
 .panel-fullscreen .panel-footer {
 	background-color: initial;
@@ -184,9 +181,7 @@ body.panel-open {
 	height: 56px;
 	max-height: 56px;
 	overflow: hidden;
-	padding: 10px 0;
-	position: absolute;
-	width: 100%;
+	padding: 10px 15px;
 }
 
 /* snackbar */
